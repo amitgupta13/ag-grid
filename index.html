@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Grid Layout</title>
+   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
+   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body ng-app="app" ng-controller="homeController">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">{{'Home'}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">{{'Profile'}}</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">{{'Support'}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">{{'Contact us'}}</a>
+          </li>
+        </ul>
+    </nav>
+    <!----
+      Please note !!!!!! These data should be fetch from the constants   
+      ---->
+    <div >
+      <div layout="row" layout-align="space-between center">
+        <div layout="row" layout-align="start center">
+            <md-switch ng-model="showEmail" ng-change="hideEmail()" style="margin: 0"  aria-label="Show email">
+                {{'Email'}}
+            </md-switch>
+            <md-switch ng-model="showMobile" ng-change="hideMobile()" style="margin: 0" aria-label="Show mobileNumber">
+                {{'Mobile number'}}
+            </md-switch>
+            <md-switch ng-model="showStatus" ng-change="hideStatus()" style="margin: 0" aria-label="Show status">
+                {{'Status'}}
+            </md-switch>
+            <md-switch ng-model="showLabels" ng-change="hideLabels()" style="margin: 0" aria-label="Show Labels">
+                {{'Label'}}
+            </md-switch>
+            <md-switch ng-model="showNextAction" ng-change="hideNextAction()"  style="margin: 0"  aria-label="Show NextAction">
+                {{'Next action'}}
+            </md-switch>
+            <md-switch ng-model="showDocuments" ng-change="hideDocuments()" style="margin: 0"  aria-label="Show Documents">
+                {{'Documents'}}
+            </md-switch>
+            <md-switch ng-model="showMetadata" ng-change="hideMetadata()" style="margin: 0"  aria-label="Show Fields">
+                <span>{{'User fields'}}</span>
+            </md-switch>
+        </div>
+        
+    </div>
+        <div id="myGrid" ag-grid="gridOptions" style="height: 400px;width: 1280px"  class="ag-theme-alpine"></div>
+   <script  src="grid.js"></script>
+      </div>
+ 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.0.slim.min.js" integrity="sha256-MlusDLJIP1GRgLrOflUQtshyP0TwT/RHXsI1wWGnQhs=" crossorigin="anonymous"></script> -->
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+<script src="https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.js"></script>
+<script src="app.js"></script>
+<script>
+</script>
+</body>
+</html> 
