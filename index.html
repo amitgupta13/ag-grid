@@ -7,7 +7,7 @@
 
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body ng-app="app" ng-controller="homeController">
+<body ng-app="app" ng-controller="homeController" style="width: 100%; height: 100%;">
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
@@ -26,6 +26,7 @@
           </li>
         </ul>
     </nav>
+    
     <!----
       Please note !!!!!! These data should be fetch from the constants   
       ---->
@@ -54,9 +55,23 @@
                 <span>{{'User fields'}}</span>
             </md-switch>
         </div>
-        
+        <md-menu>
+          <!-- Trigger element is a md-button with an icon -->
+          <md-button ng-click="$mdOpenMenu($event)" class="md-icon-button" aria-label="Open sample menu">
+            <md-icon md-svg-icon="call:phone"></md-icon>
+          </md-button>
+          <md-menu-content>
+            <md-menu-item><md-button ng-click="doSomething()">Do Something</md-button></md-menu-item>
+          </md-menu-content>
+         </md-menu>
     </div>
         <div id="myGrid" ag-grid="gridOptions" style="height: 400px;width: 1280px"  class="ag-theme-alpine"></div>
+        <button ng-click="getSelectedRows()">Click me</button>
+        <md-input-container>
+          <label>Color</label>
+          <input type="text" ng-model="color" required="" md-maxlength="10">
+        </md-input-container>
+        <input type="text" ng-model="search" ng-change="quickSearch() ">
    <script  src="grid.js"></script>
       </div>
  
@@ -68,6 +83,7 @@
  
   <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
 <script src="https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.js"></script>
+<!-- <script src="https://unpkg.com/ag-grid-enterprise@18.1.0/dist/ag-grid-enterprise.min.js"></script>  -->
 <script src="app.js"></script>
 <script>
 </script>
